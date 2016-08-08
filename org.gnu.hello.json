@@ -1,0 +1,25 @@
+{
+    "app-id": "org.gnu.hello",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "1.4",
+    "sdk": "org.freedesktop.Sdk",
+    "command": "hello",
+    "separate-locales": false,
+    "build-options" : {
+        "cflags": "-O2 -g",
+        "cxxflags": "-O2 -g"
+    },
+    "cleanup": [ "/bin/flatpak-arch-emulator" ],
+    "modules": [
+        {
+            "name": "gnu-hello",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "http://ftp.gnu.org/gnu/hello/hello-2.10.tar.gz",
+                    "sha256": "31e066137a962676e89f69d1b65382de95a7ef7d914b8cb956f41ea72e0f516b"
+                }
+            ]
+        }
+    ]
+}

@@ -17,6 +17,11 @@ else
 	TARGET=`uname -p`
 fi
 
+# Unset the --arch-emulator if flatpak doesn't support it
+if [ ! -z "$ARCH_EMU_OPT" ] ; then
+	flatpak-builder --help | grep -q arch-emulator || ARCH_EMU_OPT=""
+fi
+
 echo ========== Building $APPID ================
 rm -rf app
 flatpak-builder $ARCH_OPT $ARCH_EMU_OPT --ccache --require-changes --repo=hello-repo --subject="${APPID} ${VERSION}" ${EXPORT_ARGS-} app $FILE && \

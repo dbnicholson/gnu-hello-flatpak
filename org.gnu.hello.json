@@ -9,7 +9,6 @@
         "cflags": "-O2 -g",
         "cxxflags": "-O2 -g"
     },
-    "cleanup": [ "/bin/flatpak-arch-emulator" ],
     "modules": [
         {
             "name": "gnu-hello",

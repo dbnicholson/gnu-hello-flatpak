@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -ex
 
 FILE=org.gnu.hello.json
 VERSION=2.10

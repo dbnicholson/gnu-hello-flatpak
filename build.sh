@@ -13,5 +13,5 @@ fi
 
 echo ========== Building $APPID ================
 rm -rf app
-flatpak-builder $ARCH_OPT --ccache --require-changes --repo=hello-repo --subject="${APPID} ${VERSION}" ${EXPORT_ARGS-} app $FILE && \
+flatpak-builder $ARCH_OPT --repo=hello-repo --subject="${APPID} ${VERSION}" ${EXPORT_ARGS-} app $FILE
 flatpak build-bundle $ARCH_OPT hello-repo/ $APPID-$VERSION.$TARGET.flatpak $APPID master
